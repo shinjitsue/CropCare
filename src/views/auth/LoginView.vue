@@ -112,7 +112,7 @@
                 :width="900"
                 aspect-ratio="1/1"
                 cover
-                src="/public/images/icon.png"
+                src="/images/icon.png"
               ></v-img>
             </v-col>
           </v-row>

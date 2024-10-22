@@ -7,12 +7,14 @@
             <v-col cols="12" md="6">
               <v-card
                 class="mx-auto pa-12 pb-8"
-                elevation="20"
+                elevation="24"
                 max-width="450"
                 rounded="lg"
               >
-                <v-card-title class="text-center pb-5 text-h5 font-weight-bold">
-                  Login to your account
+                <v-card-title class="pb-6 text-center">
+                  <h5 class="text-h5 font-weight-bold">
+                    Login to your account
+                  </h5>
                 </v-card-title>
 
                 <div class="text-subtitle-1 text-medium-emphasis">Account</div>
@@ -24,14 +26,14 @@
                   placeholder="Email address"
                   variant="outlined"
                   style="height: 60px; line-height: 30px"
-                  color="primary"
+                  color="light-green-darken-2"
                   bg-color="grey-lighten-5"
                   @focus="emailFocused = true"
                   @blur="emailFocused = false"
                   required
                 >
                   <template v-slot:prepend-inner>
-                    <v-icon :color="emailFocused ? 'primary' : ''"
+                    <v-icon :color="emailFocused ? 'light-green-darken-4' : ''"
                       >mdi-email</v-icon
                     >
                   </template>
@@ -52,7 +54,7 @@
                   variant="outlined"
                   rounded="lg"
                   style="height: 60px; line-height: 30px"
-                  color="primary"
+                  color="light-green-darken-2"
                   bg-color="grey-lighten-5"
                   @focus="passwordFocused = true"
                   @blur="passwordFocused = false"
@@ -60,15 +62,17 @@
                   required
                 >
                   <template v-slot:prepend-inner>
-                    <v-icon :color="passwordFocused ? 'primary' : ''"
+                    <v-icon
+                      :color="passwordFocused ? 'light-green-darken-4' : ''"
                       >mdi-lock</v-icon
                     >
                   </template>
                 </v-text-field>
 
                 <v-btn
-                  class="mb-8 mt-2"
-                  color="blue"
+                  rounded="lg"
+                  class="mb-3 mt-3"
+                  color="light-green-darken-3"
                   size="large"
                   variant="tonal"
                   block
@@ -76,15 +80,29 @@
                   Log In
                 </v-btn>
 
-                <v-card-text class="text-center">
-                  <a
-                    class="text-blue text-decoration-none"
-                    href="#"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Sign up now <v-icon icon="mdi-chevron-right"></v-icon>
-                  </a>
+                <v-divider>or</v-divider>
+
+                <v-btn
+                  class="custom-google-btn mt-3"
+                  prepend-icon="mdi-google"
+                  rounded="lg"
+                  border="sm"
+                  size="large"
+                  variant="text"
+                  block
+                  >Sign-up with google</v-btn
+                >
+
+                <v-card-text class="text-center mt-2">
+                  <h5 class="text-center">
+                    Don't have an account?
+                    <RouterLink
+                      class="text-light-green-darken-2 text-decoration-none"
+                      to="/register"
+                    >
+                      Register here
+                    </RouterLink>
+                  </h5>
                 </v-card-text>
               </v-card>
             </v-col>
@@ -94,7 +112,7 @@
                 :width="900"
                 aspect-ratio="1/1"
                 cover
-                src="/src/assets/img/1.png"
+                src="/public/images/icon.png"
               ></v-img>
             </v-col>
           </v-row>
@@ -119,5 +137,10 @@ html {
 
 .fill-height {
   height: 100vh;
+}
+
+.custom-google-btn {
+  text-transform: none;
+  font-size: 14px;
 }
 </style>

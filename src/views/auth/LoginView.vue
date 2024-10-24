@@ -22,8 +22,8 @@
                   <h5 class="text-center font-weight-light">
                     Don't have an account?
                     <RouterLink
-                      class="text-light-green-darken-2 text-decoration-none"
-                      to="/register"
+                      class="text-light-green-darken-3 text-decoration-none"
+                      to="/signup"
                     >
                       Sign up
                     </RouterLink>

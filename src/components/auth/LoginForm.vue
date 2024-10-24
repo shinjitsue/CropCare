@@ -3,7 +3,7 @@
     <div class="text-subtitle-1 text-medium-emphasis">Account</div>
 
     <v-text-field
-      class="custom-text-field"
+      class="login-text-field"
       rounded="lg"
       density="compact"
       placeholder="Email address"
@@ -11,12 +11,12 @@
       style="height: 60px; line-height: 30px"
       color="light-green-darken-2"
       bg-color="grey-lighten-5"
-      @focus="emailFocused = true"
-      @blur="emailFocused = false"
+      @focus="isEmailFocused = true"
+      @blur="isEmailFocused = false"
       required
     >
       <template v-slot:prepend-inner>
-        <v-icon :color="emailFocused ? 'light-green-darken-4' : ''"
+        <v-icon :color="isEmailFocused ? 'light-green-darken-4' : ''"
           >mdi-email</v-icon
         >
       </template>
@@ -28,7 +28,7 @@
       Password
 
       <a
-        class="text-caption text-decoration-none text-light-green-darken-2"
+        class="text-caption text-decoration-none text-light-green-darken-3"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -38,9 +38,9 @@
     </div>
 
     <v-text-field
-      class="custom-text-field"
-      :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
-      :type="visible ? 'text' : 'password'"
+      class="login-text-field"
+      :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
+      :type="isPasswordVisible ? 'text' : 'password'"
       density="compact"
       placeholder="Enter your password"
       variant="outlined"
@@ -48,13 +48,13 @@
       style="height: 60px; line-height: 30px"
       color="light-green-darken-2"
       bg-color="grey-lighten-5"
-      @focus="passwordFocused = true"
-      @blur="passwordFocused = false"
-      @click:append-inner="visible = !visible"
+      @focus="isPasswordFocused = true"
+      @blur="isPasswordFocused = false"
+      @click:append-inner="isPasswordVisible = !isPasswordVisible"
       required
     >
       <template v-slot:prepend-inner>
-        <v-icon :color="passwordFocused ? 'light-green-darken-4' : ''"
+        <v-icon :color="isPasswordFocused ? 'light-green-darken-4' : ''"
           >mdi-lock</v-icon
         >
       </template>
@@ -74,7 +74,7 @@
     <v-divider>or</v-divider>
 
     <v-btn
-      class="custom-google-btn mt-3"
+      class="login-google-btn mt-3"
       rounded="lg"
       border="sm"
       size="large"
@@ -82,7 +82,7 @@
       block
     >
       <GoogleIcon />
-      Sign-up with google
+      Sign-up with Google
     </v-btn>
   </v-form>
 </template>
@@ -91,13 +91,13 @@
 import { ref } from 'vue'
 import GoogleIcon from '@/components/icons/GoogleIcon.vue'
 
-const visible = ref(false)
-const emailFocused = ref(false)
-const passwordFocused = ref(false)
+const isPasswordVisible = ref(false)
+const isEmailFocused = ref(false)
+const isPasswordFocused = ref(false)
 </script>
 
 <style scoped>
-.custom-google-btn {
+.login-google-btn {
   text-transform: none;
   font-size: 14px;
 }

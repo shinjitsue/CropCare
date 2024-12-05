@@ -3,7 +3,12 @@
     <v-app>
       <v-main class="bg-light-green-lighten-4 fill-height">
         <v-container style="height: 100%">
-          <v-row justify="center" align="center" style="height: 100%">
+          <v-row
+            justify="center"
+            align="center"
+            style="height: 100%"
+            class="ma-0"
+          >
             <v-col cols="12" md="6" class="d-none d-md-flex">
               <v-img
                 :width="900"
@@ -31,7 +36,7 @@
                     Have an account?
                     <RouterLink
                       class="text-light-green-darken-3 text-decoration-none"
-                      to="/"
+                      to="/login"
                     >
                       Log in
                     </RouterLink>

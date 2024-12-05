@@ -3,7 +3,12 @@
     <v-app>
       <v-main class="bg-light-green-lighten-4 fill-height">
         <v-container style="height: 100%">
-          <v-row justify="center" align="center" style="height: 100%">
+          <v-row
+            justify="center"
+            align="center"
+            style="height: 100%"
+            class="ma-0"
+          >
             <v-col cols="12" md="6">
               <v-card
                 class="mx-auto pa-12 pb-8"
@@ -53,7 +58,7 @@ import LoginForm from '@/components/auth/LoginForm.vue'
 </script>
 
 <style>
-html {
+/* html {
   overflow-y: hidden !important;
-}
+} */
 </style>
